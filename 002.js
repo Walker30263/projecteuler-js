@@ -26,30 +26,30 @@ function fibonacciUntil4Mil() {
 
   let nextTerm = 2;
 
-  for (let i = 0; i <= 100; i++) {
-    let nextTerm = term1 + term2;
-    term1 = term2;
-    term2 = nextTerm;
-    if (nextTerm < 4000000) {
+  for (let i = 0; i <= 100; i++) { //The number 100 is kinda arbitrary
+    let nextTerm = term1 + term2; //next term is the sum of the last two numbers
+    term1 = term2; //shift term1 and term2 forward
+    term2 = nextTerm; //shift term1 and term2 forward
+    if (nextTerm < 4000000) { //push to the fibonacci numbers array until the terms reach 4,000,000
        fibonacci.push(nextTerm);
     }
   }
 
-  return fibonacci;
+  return fibonacci; //return the array
 }
 
 function solution() {
-  let fibonacci = fibonacciUntil4Mil();
+  let fibonacci = fibonacciUntil4Mil(); //get the fibonacci numbers array
   let evenFibonacciNumbers = [];
 
   for (let number of fibonacci) {
-    if (number % 2 === 0) {
-      evenFibonacciNumbers.push(number);
+    if (number % 2 === 0) { //check if the number is even by checking if the remainder when divided by 2 is 0
+      evenFibonacciNumbers.push(number); //if so, push it to the even fibonacci numbers array
     }
   }
 
-  const add = (a, b) => a + b;
-  return(evenFibonacciNumbers.reduce(add));
+  const add = (a, b) => a + b; //arrow function to add numbers
+  return(evenFibonacciNumbers.reduce(add)); //add the numbers in the evenFibonacciNumbers array and return it
 }
 
-console.log(solution());
+console.log(solution()); //outputs the answer!

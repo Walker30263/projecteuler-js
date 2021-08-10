@@ -40,4 +40,4 @@ function solution(x) {
   return Math.abs(squareOfSums - sumOfSquares); //return the absolute difference, absolute value gets rid of the sign just in case it's negative
 }
 
-console.log(solution(100))
+console.log(solution(100)) //tells you the answer!
